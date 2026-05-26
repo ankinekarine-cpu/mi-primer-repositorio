@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  index.html — Lista de Tareas
+  Archivo principal de la aplicación. Define la estructura
+  semántica de la página: cabecera, formulario de carga,
+  listado de tareas y pie de página.
+  ============================================================ -->
+<html lang="es">
+<head>
+  <!-- Metadatos básicos: codificación y viewport responsive -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas</title>
+  <!-- Vincula la hoja de estilos externa -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Encabezado: título principal de la aplicación -->
+  <header>
+    <h1>Lista de Tareas</h1>
+  </header>
+
+  <!-- Contenido principal: formulario + listado -->
+  <main>
+    <!--
+      Formulario para agregar tareas.
+      El evento 'submit' lo captura app.js para evitar la
+      recarga de página y procesar la nueva tarea.
+    -->
+    <form id="task-form">
+      <!-- Campo de texto donde el usuario escribe la tarea -->
+      <input type="text" id="task-input" placeholder="Escribí una tarea..." required>
+      <!-- Botón que dispara el alta de la tarea -->
+      <button type="submit">Agregar</button>
+    </form>
+
+    <!--
+      Lista vacía donde app.js renderiza dinámicamente
+      cada tarea como un <li> con checkbox, texto y botón eliminar.
+    -->
+    <ul id="task-list"></ul>
+  </main>
+
+  <!-- Pie de página con información secundaria -->
+  <footer>
+    <p>Hecho con ❤️ — vanilla JS</p>
+  </footer>
+
+  <!--
+    Script al final del body para asegurar que el DOM ya
+    existe cuando app.js intente obtener los elementos.
+  -->
+  <script src="app.js"></script>
+</body>
+</html>

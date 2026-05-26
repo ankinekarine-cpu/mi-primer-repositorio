@@ -1,0 +1,152 @@
+/* ============================================================
+  style.css — Estilos de la Lista de Tareas
+  Sistema de diseño simple, mobile-first, sin frameworks.
+  ============================================================ */
+
+/* --- Reset básico --- */
+/* Elimina márgenes/paddings por defecto y unifica box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Body — fuente del sistema + fondo suave --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* --- Header — centrado con separación inferior --- */
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  color: #333;
+}
+
+/* --- Contenedor genérico (opcional) --- */
+/* Centra horizontalmente con un ancho máximo de 480px */
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* --- Formulario de nueva tarea --- */
+/* input + botón en fila con separación entre ellos */
+#task-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Input de texto --- */
+/* Ocupa el espacio disponible (flex: 1) */
+#task-input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Estado de foco: resaltado con borde azul + sombra */
+#task-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* --- Botón genérico --- */
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  background: #007bff;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* --- Lista de tareas --- */
+/* Columna vertical con separación entre elementos */
+#task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Cada tarea se renderiza como una tarjeta */
+#task-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.9rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: box-shadow 0.15s;
+}
+
+/* Sutil elevación al pasar el mouse */
+#task-list li:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* El texto de la tarea ocupa el espacio flexible */
+#task-list li span {
+  flex: 1;
+  word-break: break-word;
+}
+
+/* --- Tarea completada --- */
+/* Se activa con la clase .completada desde JS */
+/* Texto gris + tachado */
+#task-list li.completed span {
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* --- Checkbox --- */
+#task-list li input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+  accent-color: #007bff;
+}
+
+/* --- Botón de eliminar --- */
+/* Plano por defecto, rojo al hover */
+.delete-btn {
+  background: transparent;
+  color: #999;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.delete-btn:hover {
+  background: #ffe0e0;
+  color: #c00;
+}
+
+/* --- Footer --- */
+/* Texto secundario centrado al pie */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #999;
+  font-size: 0.85rem;
+}
